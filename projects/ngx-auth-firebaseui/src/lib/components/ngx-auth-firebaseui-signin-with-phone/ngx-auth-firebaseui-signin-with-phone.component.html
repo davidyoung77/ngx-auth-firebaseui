@@ -1,0 +1,60 @@
+<mat-card>
+  <mat-card-title>Enter your phone number</mat-card-title>
+  <mat-card-content>
+    <form [@animateStagger]="{ value: '50' }">
+      <div fxLayout="column" fxLayoutAlign="center">
+        <mat-form-field [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}">
+          <mat-label>phone</mat-label>
+          <input formControlName="phone"
+                matInput
+                required>
+          <mat-icon [color]="color" matSuffix>phone</mat-icon>
+          <!-- <mat-error *ngIf="signInEmailFormControl.hasError('required')">
+            {{emailErrorRequiredText}}
+          </mat-error>
+          <mat-error *ngIf="signInEmailFormControl.hasError('pattern')">
+            {{emailErrorPatternText}}
+          </mat-error> -->
+        </mat-form-field>
+
+        <button [@animate]="{ value: '*', params: { x: '50px' } }"
+                [color]="color"
+                class="space-top"
+                mat-raised-button
+                style="margin-top: 20px"
+                type="submit">
+          Verify
+        </button>
+      </div>
+    </form>
+  By tapping Verify, an SMS may be sent. Message & data rates may apply.
+  </mat-card-content>
+</mat-card>
+<!-- <mat-card>
+  <mat-card-content>
+    <form (ngSubmit)="signIn()"
+          [@animateStagger]="{ value: '50' }"
+          [formGroup]="signInFormGroup">
+      <div fxLayout="column" fxLayoutAlign="center">
+        <mat-form-field [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
+                        [appearance]="appearance">
+          <mat-label>{{emailText}}</mat-label>
+          <input formControlName="phone"
+                matInput
+                required
+                autocomplete="phone">
+
+        <button [@animate]="{ value: '*', params: { x: '50px' } }"
+                [color]="color"
+                [disabled]="signInFormGroup.invalid"
+                class="space-top"
+                mat-raised-button
+                style="margin-top: 20px"
+                type="submit">
+          Verify
+        </button>
+      </div>
+    </form>
+  By tapping Verify, an SMS may be sent. Message & data rates may apply.
+  </mat-card-content>
+</mat-card> -->
